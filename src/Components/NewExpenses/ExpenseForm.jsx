@@ -21,6 +21,7 @@ export default function ExpenseForm(props) {
     const HandleSubmit = (e) => {
         e.preventDefault();
         const obj = {
+            id: Date.now(),
             title: values.title,
             amount: values.amount,
             date: values.date,
@@ -31,45 +32,45 @@ export default function ExpenseForm(props) {
     };
 
     return (
-        <form>
-            <div className="new-expense__controls">
+        <div className='new-expense'>
+            <form>
+                <div className="new-expense__controls">
 
-                <div className="new-expense__control">
-                    <label>Title</label>
-                    <input
-                        name='title'
-                        type="text"
-                        value={values.title}
-                        onChange={handleChange} />
-                </div>
+                    <div className="new-expense__control">
+                        <label>Title</label>
+                        <input
+                            name='title'
+                            type="text"
+                            value={values.title}
+                            onChange={handleChange} />
+                    </div>
 
-                <div className="new-expense__control">
-                    <label>Amount</label>
-                    <input
-                        name='amount'
-                        type="number"
-                        value={values.amount}
-                        min="1"
-                        step="1"
-                        onChange={handleChange}
-                    />
-                </div>
+                    <div className="new-expense__control">
+                        <label>Amount</label>
+                        <input
+                            name='amount'
+                            type="number"
+                            value={values.amount}
+                            onChange={handleChange}
+                        />
+                    </div>
 
-                <div className="new-expense__control">
-                    <label>Date</label>
-                    <input
-                        name='date'
-                        type="date"
-                        value={values.date}
-                        onChange={handleChange} />
-                </div>
+                    <div className="new-expense__control">
+                        <label>Date</label>
+                        <input
+                            name='date'
+                            type="date"
+                            value={values.date}
+                            onChange={handleChange} />
+                    </div>
 
-                <div className="new-expense__actions">
-                    <button type="submit" onClick={HandleSubmit}>
-                        Add Expense
-                    </button>
+                    <div className="new-expense__actions">
+                        <button type="submit" onClick={HandleSubmit}>
+                            Add Expense
+                        </button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     );
 }

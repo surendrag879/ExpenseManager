@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+var showList = JSON.parse(localStorage.getItem("showList") || "[]")
+
 const initialState = {
     expanseData: []
 }
@@ -10,7 +12,8 @@ const expenseSlice = createSlice({
     reducers: {
         addExpanse: (state, action) => {
             const data = action.payload;
-            localStorage.setItem('expanseData', JSON.stringify(data))
+            showList.push(data);
+            localStorage.setItem('showList', JSON.stringify(showList))
             state.expanseData.push(data)
         }
     }

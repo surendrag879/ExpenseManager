@@ -1,41 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import ExpenseForm from './Components/NewExpenses/ExpenseForm';
 import Expense from './Components/Expenses/Expense';
-import NewExpense from './Components/NewExpenses/NewExpense';
-
-// let expense = [];
+var showList = JSON.parse(localStorage.getItem("showList") || "[]")
+// import FormValidation from './form';
 const App = () => {
+    let data = showList;
 
-    const [Newdata, setNewData] = useState([])
-
-    // function fetchData() {
-    //     fetch('https://reqres.in/api/users/2').then(
-    //         response => {
-    //             return response.json();
-    //         }
-    //     ).then(
-    //         data => {
-    //             console.log(data);
-    //             setNewData('Api data', data);
-    //         }
-    //     );
-    // }
-
-    // useEffect(() => {
-    //     fetchData();
-
-    // }, []);
-
-    const ExpenseFormData = (expenses) => {
-        const updateData = [expenses, ...Newdata]
-        setNewData(updateData)
-        console.log('database data', updateData);
-
-    };
 
     return (
-        <div>
-            <NewExpense onAddExpense={ExpenseFormData} />
-            <Expense item={Newdata} />
+        <div className='container'>
+            <ExpenseForm />
+            <Expense data={data} />
+            {/* <FormValidation /> */}
         </div>
     );
 }

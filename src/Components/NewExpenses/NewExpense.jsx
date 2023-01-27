@@ -1,20 +1,19 @@
-import React from "react";
-import './NewExpense.css'
-import ExpenseForm from "./ExpenseForm.jsx";
+// import React from "react";
+// import './NewExpense.css'
+// import ExpenseForm from "./ExpenseForm.jsx";
 
-export default function NewExpense(props) {
+// export default function NewExpense(props) {
 
-    const onsaveExpenseData = (ExpenseData) => {
-        const NewExpenseData = { ...ExpenseData }
+//     const onsaveExpenseData = (ExpenseData) => {
+//         const NewExpenseData = { ...ExpenseData }
 
-        props.onAddExpense(NewExpenseData);
-    };
+//         props.onAddExpense(NewExpenseData);
+//     };
 
 
-    return (
-        <div className='new-expense'>
-            <ExpenseForm
-                SaveExpenseData={onsaveExpenseData} />
-        </div>
-    );
-}
+//     return (
+//         <div className='new-expense'>
+//             {/* <ExpenseForm  SaveExpenseData={onsaveExpenseData} /> */}
+//         </div>
+//     );
+// }
